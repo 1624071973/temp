@@ -1,6 +1,6 @@
 <template>
 	<div style="width:600px">
-		<Tree :data="data5" :render="renderContent"></Tree>
+		<Tree :data="data5" :render="renderContent" @on-toggle-expand="addContent"></Tree>
 	</div>
 
 </template>
@@ -11,7 +11,7 @@
 				data5: [
 					{
 						title: 'parent 1',
-						id:'001',
+						layerId: '001',
 						expand: false,
 						render: (h, {root, node, data}) => {
 							return h('span', {
@@ -20,13 +20,8 @@
 									width: '100%'
 								}
 							}, [
-								h('span',{
-									on: {
-										click: () => {
-											this.queryList(data)
-										}
-									}
-								} ,[
+								h('span', {
+								}, [
 									h('span', data.title)
 								]),
 								h('span', {
@@ -56,12 +51,8 @@
 						width: '100%'
 					}
 				}, [
-					h('span',{
-						on: {
-							click: () => {
-								this.queryList(data)
-							}
-						}
+					h('span', {
+
 					}, [
 						h('span', data.title)
 					]),
@@ -88,25 +79,19 @@
 					])
 				]);
 			},
-			queryList(data) {
-				//const children = data.children || [];
+			addContent(data){
 				console.log(data);
-				let children=[{
-					title: 'appended node'+data.id,
+				let children = [{
+					title: 'appended node' + data.layerId,
 					expand: false,
-					id: data.id+'1',
+					layerId: data.layerId + '1',
 					children: [{}]
 				}, {
-					title: 'child 1-1'+data.id,
+					title: 'child 1-1' + data.id,
 					expand: false,
-					id: data.id+'02',
+					id: data.id + '02',
 					children: [{}]
 				}];
-				if(data.id=='00111'){
-					alert('555');
-					this.$set(data, 'disabled', true);
-				}
-
 				this.$set(data, 'children', children);
 			}
 		}
