@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b0b230a-2834-4f99-b20a-318ada36bc10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/file/demo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/file/demo.vue" afterDir="false" />
-    </list>
+    <list default="true" id="1b0b230a-2834-4f99-b20a-318ada36bc10" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="85" />
     <option name="y" value="19" />
     <option name="width" value="1399" />
@@ -70,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556122549106" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556124135495" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -106,7 +104,7 @@
       <updated>1555687677332</updated>
       <workItem from="1555687678586" duration="1271000" />
       <workItem from="1555946281204" duration="900000" />
-      <workItem from="1556121139114" duration="957000" />
+      <workItem from="1556121139114" duration="1803000" />
     </task>
     <task id="LOCAL-00001" summary="3">
       <created>1555687754515</created>
@@ -133,7 +131,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3128000" />
+    <option name="totallyTimeSpent" value="3974000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -145,7 +143,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="85" y="19" width="1399" height="986" extended-state="0" />
+    <frame x="85" y="19" width="1399" height="986" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25690815" />
