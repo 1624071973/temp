@@ -1,99 +1,80 @@
 <template>
-	<div style="width:600px">
-		<Tree :data="data5" :render="renderContent" @on-toggle-expand="addContent"></Tree>
-	</div>
+  <div>
+    <Table border :columns="columns1" :data="data1" @on-row-click="handlerClicked"></Table>
+    <Button @click='demo'>
+      dianji
+    </Button>
+  </div>
 
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				data5: [
-					{
-						title: 'parent 1',
-						layerId: '001',
-						expand: false,
-						render: (h, {root, node, data}) => {
-							return h('span', {
-								style: {
-									display: 'inline-block',
-									width: '100%'
-								}
-							}, [
-								h('span', {
-								}, [
-									h('span', data.title)
-								]),
-								h('span', {
-									style: {
-										display: 'inline-block',
-										float: 'right',
-										marginRight: '32px'
-									},
+  export default {
+    data() {
+      return {
+        columns1: [
+          {
+            title: 'Name',
+            align: 'center',
+            key: 'flag',
+            render: (h, params) => {
+              return h('div', [
+                h('Radio', {
+                  props: {
+                    value: this.data1[params.index].flag
+                  }
+                })
+              ])
+            }
+          },
+          {
+            title: 'Age',
+            key: 'age'
+          },
+          {
+            title: 'Address',
+            key: 'address'
+          }
+        ],
+        data1: [
+          {
+            flag: false,
+            age: 18,
+            address: 'New York No. 1 Lake Park',
+            date: '2016-10-03'
+          },
+          {
+            flag: false,
+            age: 24,
+            address: 'London No. 1 Lake Park',
+            date: '2016-10-01'
+          },
+          {
+            flag: false,
+            age: 30,
+            address: 'Sydney No. 1 Lake Park',
+            date: '2016-10-02'
+          },
+          {
+            flag: false,
+            age: 26,
+            address: 'Ottawa No. 2 Lake Park',
+            date: '2016-10-04'
+          }
+        ]
+      }
 
-								})
-							]);
-						},
-						children: [{}]
-					}
-				],
-				buttonProps: {
-					type: 'default',
-					size: 'small',
-				}
-			}
-		},
-		methods: {
-			renderContent(h, {root, node, data}) {
-				return h('span', {
-					style: {
-						display: 'inline-block',
-						width: '100%'
-					}
-				}, [
-					h('span', {
+    },
+    methods: {
+      demo() {
 
-					}, [
-						h('span', data.title)
-					]),
-					h('span', {
-						style: {
-							display: 'inline-block',
-							float: 'right',
-							marginRight: '32px'
-						}
-					}, [
-						h('Button', {
-							props: Object.assign({}, this.buttonProps, {
-								icon: 'ios-add'
-							}),
-							style: {
-								marginRight: '8px'
-							},
-							on: {
-								click: () => {
-									alert(data.title)
-								}
-							}
-						})
-					])
-				]);
-			},
-			addContent(data){
-				console.log(data);
-				let children = [{
-					title: 'appended node' + data.layerId,
-					expand: false,
-					layerId: data.layerId + '1',
-					children: [{}]
-				}, {
-					title: 'child 1-1' + data.id,
-					expand: false,
-					id: data.id + '02',
-					children: [{}]
-				}];
-				this.$set(data, 'children', children);
-			}
-		}
-	}
+      },
+      handlerClicked(val) {
+        console.log(val);
+        this.data1.forEach(function (item) {
+          let {address, age, flag} = item;
+          item.flag = address === val.address && age === val.age && flag === val.flag;
+        })
+      }
+    }
+  }
 </script>
